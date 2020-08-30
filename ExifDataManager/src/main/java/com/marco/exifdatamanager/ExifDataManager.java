@@ -86,7 +86,31 @@ public class ExifDataManager {
 		return tagsToUpdate;
 	}
 
-	private Map<ExifTags, String> callExifTool(Map<ExifTags, String> tagsValues, boolean updating, File fileToUse) throws MarcoException {
+	/**
+	 * Given the {@link ExifTags} GPS_LATITUE and GPS_LONGITUDE it returns an
+	 * instance of {@link GpsData}, null otherwise
+	 * 
+	 * @param exifTags
+	 * @return
+	 */
+	public GpsData convertIntoGpsData(Map<ExifTags, String> exifTags) {
+
+		if (exifTags.get(ExifTags.GPS_LATITUDE) != null && exifTags.get(ExifTags.GPS_LONGITUTE) != null) {
+			GpsData gpsData = new GpsData();
+
+			double longitude = Double.parseDouble(exifTags.get(ExifTags.GPS_LONGITUTE));
+			double latitude = Double.parseDouble(exifTags.get(ExifTags.GPS_LATITUDE));
+			gpsData.setLat(latitude);
+			gpsData.setLng(longitude);
+
+			return gpsData;
+
+		}
+		return null;
+	}
+
+	private Map<ExifTags, String> callExifTool(Map<ExifTags, String> tagsValues, boolean updating, File fileToUse)
+			throws MarcoException {
 
 		if (tagsValues.size() == 0) {
 			throw new MarcoException("Kindly provide the tags to retrieve / update");
