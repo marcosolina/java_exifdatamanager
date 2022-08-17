@@ -17,7 +17,8 @@ public enum ExifTags {
 	DATE_FILE_MODIFIED("FileModifyDate"),
 	DATE_DATE_TIME_ORIGINAL("DateTimeOriginal"), 
 	DATE_MODIFY_DATE("ModifyDate"), 
-	DATE_CREATE_DATE("CreateDate");
+	DATE_CREATE_DATE("CreateDate"),
+    DATE_CREATION_DATE("CreationDate");
 
 	private final String exifTag;
 
