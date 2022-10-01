@@ -203,6 +203,10 @@ public class ExifDataManager {
 					// 2019:01:05 19:07:33
 					map.put(tag, valueTag);
 					break;
+				case DATE_CREATION_DATE:
+				    // 2022:07:02 12:57:48+02:00
+				    map.put(tag, valueTag);
+				    break;
 				case MIME_TYPE:
 					map.put(tag, valueTag);
 					break;

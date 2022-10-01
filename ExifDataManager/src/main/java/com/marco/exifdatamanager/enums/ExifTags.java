@@ -15,6 +15,8 @@ public enum ExifTags {
 	GPS_LONGITUTE("GPSLongitude"), 
 	GPS_LONG_REF("GPSLongitudeRef"), 
 	DATE_FILE_MODIFIED("FileModifyDate"),
+	DATE_FILE_CREATE_DATE("FileCreateDate"),
+	DATE_FILE_ACCESS_DATE("FileAccessDate"),
 	DATE_DATE_TIME_ORIGINAL("DateTimeOriginal"), 
 	DATE_MODIFY_DATE("ModifyDate"), 
 	DATE_CREATE_DATE("CreateDate"),
